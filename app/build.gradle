@@ -1,0 +1,38 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 34
+    buildToolsVersion "34.0.0"
+
+    defaultConfig {
+        applicationId "com.rifsxd.processhook"
+        minSdkVersion 28
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0.0" 
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+            minifyEnabled true
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    dependenciesInfo.includeInApk false
+    namespace 'com.rifsxd.processhook'
+}
+
+dependencies {
+    compileOnly 'de.robv.android.xposed:api:82'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+}

@@ -1,0 +1,59 @@
+name: Build Apk
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'adopt'
+        cache: gradle
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Build with Gradle
+      run: ./gradlew build
+
+    - name: Build debug APK
+      run: ./gradlew assembleDebug --stacktrace
+
+    - name: Get App Version Name
+      id: version
+      run: echo "::set-output name=app_version::$(grep versionName app/build.gradle | sed -n 's/.*versionName \"\([0-9.]*\)\".*/\1/p')"
+
+    - name: Rename APK
+      run: mv app/build/outputs/apk/release/app-release.apk process-hook-v${{ steps.version.outputs.app_version }}.apk
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: Process Hook
+        path: process-hook-v${{ steps.version.outputs.app_version }}.apk
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ steps.version.outputs.app_version }}
+        release_name: ${{ steps.version.outputs.app_version }}
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Upload Release Assets
+      run: |
+        release_id=${{ steps.create_release.outputs.id }}
+        asset_url=$(curl -X POST \
+          -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Content-Type: application/octet-stream" \
+          --data-binary "@process-hook-v${{ steps.version.outputs.app_version }}.apk" \
+          "https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=process-hook-v${{ steps.version.outputs.app_version }}.apk")
+        echo "Uploaded asset: $asset_url"

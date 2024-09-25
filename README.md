@@ -10,10 +10,10 @@ Hook specific process/apps/games to spoof your device as different model/device 
 
 <div align="center">
 	
-[![GitHub license](https://img.shields.io/github/license/rifsxd/processhook?logo=apache&label=License&style=flat)](https://github.com/rifsxd/processhook/blob/master/LICENSE)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/rifsxd/processhook/total?logo=github&label=Downloads&style=flat)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rifsxd/processhook?style=flat&label=Code%20Size)
-[![GitHub Debug CI Status](https://img.shields.io/github/actions/workflow/status/rifsxd/processhook/debug.yml?logo=github&label=Debug%20CI&style=flat)](https://github.com/rifsxd/processhook/actions/workflows/debug.yml)
+[![GitHub license](https://img.shields.io/github/license/rifsxd/process-hook?logo=apache&label=License&style=flat)](https://github.com/rifsxd/process-hook/blob/master/LICENSE)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/rifsxd/process-hook/total?logo=github&label=Downloads&style=flat)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rifsxd/process-hook?style=flat&label=Code%20Size)
+[![GitHub Debug CI Status](https://img.shields.io/github/actions/workflow/status/rifsxd/process-hook/debug.yml?logo=github&label=Debug%20CI&style=flat)](https://github.com/rifsxd/process-hook/actions/workflows/debug.yml)
 
 </div>
 

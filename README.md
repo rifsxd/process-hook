@@ -8,6 +8,15 @@
 Hook specific process/apps/games to spoof your device as different model/device to unlock hidden features and options. Check list of support - [Supported Lists](#supported-debug-apps) 
 
 
+<div align="center">
+	
+[![GitHub license](https://img.shields.io/github/license/rifsxd/processhook?logo=apache&label=License&style=flat)](https://github.com/rifsxd/processhook/blob/master/LICENSE)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/rifsxd/processhook/total?logo=github&label=Downloads&style=flat)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rifsxd/processhook?style=flat&label=Code%20Size)
+[![GitHub Debug CI Status](https://img.shields.io/github/actions/workflow/status/rifsxd/processhook/debug.yml?logo=github&label=Debug%20CI&style=flat)](https://github.com/rifsxd/processhook/actions/workflows/debug.yml)
+
+</div>
+
 
 ## Features
 

@@ -3,6 +3,7 @@
 	<string name="xposed_description">Hook specific process/apps/games to spoof your device as different model/device to unlock hidden features and options</string>
 	<string-array name="scope">
 		<item>com.ytheekshana.deviceinfo</item>
+		<item>ru.andr7e.deviceinfohw</item>
 		<item>com.YoStar.AetherGazer</item>
 		<item>com.activision.callofduty.shooter</item>
 		<item>com.activision.callofudty.warzone</item>

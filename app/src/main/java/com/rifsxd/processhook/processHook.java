@@ -3,10 +3,14 @@ package com.rifsxd.processhook;
 import android.annotation.SuppressLint;
 import android.os.Build;
 import android.util.Log;
+import android.view.Display;
+import android.content.Context;
+import android.view.WindowManager;
 
 import java.lang.reflect.Field;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
+import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
@@ -21,16 +25,20 @@ public class processHook implements IXposedHookLoadPackage {
         deviceInfo properties = deviceProperties.DEVICE_MAP.get(packageName);
         if (properties != null) {
             spoofDeviceProperties(properties);
+            spoofRefreshRate(properties);
             XposedBridge.log("Spoofed " + packageName + " as " + properties.device);
         }
     }
 
     private void spoofDeviceProperties(deviceInfo properties) {
+        if (properties.manufacturer != null) {
+            setPropValue("MANUFACTURER", properties.manufacturer);
+        }
         if (properties.brand != null) {
             setPropValue("BRAND", properties.brand);
         }
-        if (properties.manufacturer != null) {
-            setPropValue("MANUFACTURER", properties.manufacturer);
+        if (properties.product != null) {
+            setPropValue("PRODUCT", properties.product);
         }
         if (properties.device != null) {
             setPropValue("DEVICE", properties.device);
@@ -47,10 +55,23 @@ public class processHook implements IXposedHookLoadPackage {
         if (properties.bootloader != null) {
             setPropValue("BOOTLOADER", properties.bootloader);
         }
-        /*if (properties.template != null) {
-            setPropValue("TEMPLATE", properties.template);
-        }*/
-        
+    }
+
+    private void spoofRefreshRate(deviceInfo properties) {
+        if (properties.refreshrate != null) {
+            try {
+                float spoofedRefreshRate = Float.parseFloat(properties.refreshrate);
+                XposedBridge.hookAllMethods(Display.class, "getRefreshRate", new XC_MethodHook() {
+                    @Override
+                    protected void afterHookedMethod(MethodHookParam param) throws Throwable {
+                        param.setResult(spoofedRefreshRate);
+                        XposedBridge.log("Spoofed refresh rate to " + spoofedRefreshRate + " Hz");
+                    }
+                });
+            } catch (NumberFormatException e) {
+                XposedBridge.log("Invalid refresh rate value: " + properties.refreshrate);
+            }
+        }
     }
 
     private static void setPropValue(String key, Object value) {

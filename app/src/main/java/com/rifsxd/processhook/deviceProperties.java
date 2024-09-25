@@ -9,101 +9,98 @@ public class deviceProperties {
 
 
     // Predefined Debug Profile
-    public static final deviceInfo DEBUG_1 = new deviceInfo("DEBUG_BRAND", "DEBUG_MAUFACTURER", "DEBUG_DEVICE", "DEBUG_MODEL", "DEBUG_HARDWARE", "DEBUG_BOARD", "DEBUG_BOOTLOADER");
+    public static final deviceInfo DEBUG_1 = new deviceInfo("DEBUG_MAUFACTURER", "DEBUG_BRAND", "DEBUG_PRODUCT", "DEBUG_DEVICE", "DEBUG_MODEL", "DEBUG_HARDWARE", "DEBUG_BOARD", "DEBUG_BOOTLOADER", "120.00");
 
-    // Props Structure [ brand -> manufacturer -> device -> model -> hardware -> board -> bootloader | null => disable props spoof ]
+    // Props Structure [ manufacturer -> brand -> product -> device -> model -> hardware -> platform -> board -> bootloader -> refreshrate | null => disable props spoof ]
+
+    //                                                                          manufacturer    brand           product             device          model               hardware    board   bootloader  refreshrate
 
     // Predefined Device Profiles
-    public static final deviceInfo ROG_PHONE_6 = new deviceInfo("Asus", "asus", "AI2201", "ASUS_AI2201", null, null, null);
-    public static final deviceInfo SAMSUNG_S9_PLUS = new deviceInfo("Samsung", "Samsung", "SM-G965F", null, null, null, null);
-    public static final deviceInfo BLACKSHARK_2 = new deviceInfo("blackshark", "blackshark", "2SM-X706B", null, null, null, null);
-    public static final deviceInfo IQOO_11_PRO = new deviceInfo("vivo", "vivo", "V2243A", null, null, null, null);
-    public static final deviceInfo ONEPLUS_8_PRO = new deviceInfo("OnePlus", "OnePlus", "IN2020", null, null, null, null);
-    public static final deviceInfo ONEPLUS_9_PRO = new deviceInfo("OnePlus", "OnePlus", "LE2123", null, null, null, null);
-    public static final deviceInfo POCO_F5 = new deviceInfo("Xiaomi", "Xiaomi", "23049PCD8G", null, null, null, null);
-    public static final deviceInfo SONY_XPERIA_5 = new deviceInfo("Sony", "Sony", "SO-52A", null, null, null, null);
-    public static final deviceInfo MI_11T_PRO = new deviceInfo("Xiaomi", "Xiaomi", "2107113SI", null, null, null, null);
-    public static final deviceInfo MI_13_PRO = new deviceInfo("Xiaomi", "Xiaomi", "2210132C", null, null, null, null);
+    public static final deviceInfo ROG_PHONE_8          =       new deviceInfo("asus",          "asus",         "WW_AI2401",        "AI2401",       "ASUS_AI2401",      "qcom",     null,   null,   "165");
+    public static final deviceInfo SAMSUNG_S24_ULTRA    =       new deviceInfo("samsung",       "samsung",      "e3qxeea",          "SM-S928B",     "SM-S928B",         "qcom",     null,   null,   "120");
+    public static final deviceInfo BLACKSHARK_5_PRO     =       new deviceInfo("blackshark",    "blackshark",   "KTUS-A0",          "KTUS-A0",      "SHARK KTUS-A0",    "qcom",     null,   null,   "120");
+    public static final deviceInfo REALME_GT6_5G        =       new deviceInfo("realme",        "realme",       "RMX3800",          "RE5C4FL1",     "RMX3800",          "qcom",     null,   null,   "120");
+    public static final deviceInfo ONEPLUS_12           =       new deviceInfo("OnePlus",       "OnePlus",      "CPH2581",          "CPH2581",      "CPH2581",          "qcom",     null,   null,   "120");
+    public static final deviceInfo VIVO_IQOO_11_PRO     =       new deviceInfo("vivo",          "vivo",         null,               "V2243A",       null,               "qcom",     null,   null,   "120");
+    public static final deviceInfo POCO_F5              =       new deviceInfo("Xiaomi",        "Xiaomi",       null,               "23049PCD8G",   null,               "qcom",     null,   null,   "120");
+    public static final deviceInfo MI_11T_PRO           =       new deviceInfo("Xiaomi",        "Xiaomi",       null,               "2107113SI",    null,               "qcom",     null,   null,   "120");
+    public static final deviceInfo MI_13_PRO            =       new deviceInfo("Xiaomi",        "Xiaomi",       null,               "2210132C",     null,               "qcom",     null,   null,   "120");
 
     // Use predefined device profiles
     static {    
         DEVICE_MAP = new HashMap<>();
 
         // Debug Device
-        DEVICE_MAP.put("com.ytheekshana.deviceinfo", DEBUG_1);
+        DEVICE_MAP.put("com.ytheekshana.deviceinfo",                DEBUG_1);
+        DEVICE_MAP.put("ru.andr7e.deviceinfohw",                    DEBUG_1);
 
-        // Asus ROG Phone 6
-        DEVICE_MAP.put("com.gameloft.android.ANMP.GloftA9HM",       ROG_PHONE_6);
-        DEVICE_MAP.put("com.activision.callofudty.warzone",         ROG_PHONE_6);
-        DEVICE_MAP.put("com.pearlabyss.blackdesertm.gl",            ROG_PHONE_6);
-        DEVICE_MAP.put("com.pearlabyss.blackdesertm",               ROG_PHONE_6);
-        DEVICE_MAP.put("com.madfingergames.legends",                ROG_PHONE_6);
-        DEVICE_MAP.put("com.ea.game.nfs14_row",                     ROG_PHONE_6);
-        DEVICE_MAP.put("com.ea.gp.fifamobile",                      ROG_PHONE_6);
-        DEVICE_MAP.put("net.wargaming.wot.blitz",                   ROG_PHONE_6);
+        // Asus ROG Phone 8
+        DEVICE_MAP.put("com.gameloft.android.ANMP.GloftA9HM",       ROG_PHONE_8);
+        DEVICE_MAP.put("com.activision.callofudty.warzone",         ROG_PHONE_8);
+        DEVICE_MAP.put("com.ea.game.nfs14_row",                     ROG_PHONE_8);
+        DEVICE_MAP.put("net.wargaming.wot.blitz",                   ROG_PHONE_8);
+        DEVICE_MAP.put("com.pearlabyss.blackdesertm.gl",            ROG_PHONE_8);
+        DEVICE_MAP.put("com.pearlabyss.blackdesertm",               ROG_PHONE_8);
+        DEVICE_MAP.put("com.madfingergames.legends",                ROG_PHONE_8);
+        DEVICE_MAP.put("com.ea.gp.fifamobile",                      ROG_PHONE_8);
 
-        // Samsung Galaxy S9+
-        DEVICE_MAP.put("com.activision.callofduty.shooter",         SAMSUNG_S9_PLUS);
+        // Samsung Galaxy S24 Ultra
+        DEVICE_MAP.put("com.activision.callofduty.shooter",         SAMSUNG_S24_ULTRA);
+        DEVICE_MAP.put("com.miraclegames.farlight84",               SAMSUNG_S24_ULTRA);
+        DEVICE_MAP.put("vng.games.revelation.mobile",               SAMSUNG_S24_ULTRA);
+        DEVICE_MAP.put("com.tencent.tmgp.pubgmhd",                  SAMSUNG_S24_ULTRA);
+        DEVICE_MAP.put("com.miHoYo.GenshinImpact",                  SAMSUNG_S24_ULTRA);
+        DEVICE_MAP.put("com.netease.lztgglobal",                    SAMSUNG_S24_ULTRA);
 
         // Black Shark 4
-        DEVICE_MAP.put("com.proximabeta.mf.uamo",                   BLACKSHARK_2);
-        DEVICE_MAP.put("com.miraclegames.farlight84",               BLACKSHARK_2);
+        DEVICE_MAP.put("com.proximabeta.mf.uamo",                   BLACKSHARK_5_PRO);
+        DEVICE_MAP.put("com.tencent.tmgp.kr.codm",                  BLACKSHARK_5_PRO);
+        DEVICE_MAP.put("com.vng.codmvn",                            BLACKSHARK_5_PRO);
+        DEVICE_MAP.put("com.vng.pubgmobile",                        BLACKSHARK_5_PRO);
+        DEVICE_MAP.put("com.pubg.krmobile",                         BLACKSHARK_5_PRO);
+        DEVICE_MAP.put("com.pubg.imobile",                          BLACKSHARK_5_PRO);
+        DEVICE_MAP.put("com.rekoo.pubgm",                           BLACKSHARK_5_PRO);
+        DEVICE_MAP.put("com.tencent.ig",                            BLACKSHARK_5_PRO);
 
-        // iQOO 11 Pro
-        DEVICE_MAP.put("com.tencent.tmgp.gnyx",                     IQOO_11_PRO);
-        DEVICE_MAP.put("com.tencent.tmgp.cod",                      IQOO_11_PRO);
-        DEVICE_MAP.put("com.tencent.tmgp.cf",                       IQOO_11_PRO);
-        DEVICE_MAP.put("com.tencent.KiHan",                         IQOO_11_PRO);
+        // Vivo iQOO 11 Pro
+        DEVICE_MAP.put("com.tencent.tmgp.gnyx",                     VIVO_IQOO_11_PRO);
+        DEVICE_MAP.put("com.tencent.tmgp.cod",                      VIVO_IQOO_11_PRO);
+        DEVICE_MAP.put("com.tencent.tmgp.cf",                       VIVO_IQOO_11_PRO);
+        DEVICE_MAP.put("com.tencent.KiHan",                         VIVO_IQOO_11_PRO);
         
+        // Realme GT6 5G
+        DEVICE_MAP.put("com.riotgames.league.teamfighttacticsvn",   REALME_GT6_5G);
+        DEVICE_MAP.put("com.riotgames.league.teamfighttacticstw",   REALME_GT6_5G);
+        DEVICE_MAP.put("com.riotgames.league.teamfighttactics",     REALME_GT6_5G);
+        DEVICE_MAP.put("com.riotgames.league.wildriftvn",           REALME_GT6_5G);
+        DEVICE_MAP.put("com.riotgames.league.wildrifttw",           REALME_GT6_5G);
+        DEVICE_MAP.put("com.riotgames.league.wildrift",             REALME_GT6_5G);
         
-        
-        // OnePlus 8 Pro
-        DEVICE_MAP.put("com.riotgames.league.teamfighttacticsvn",   ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.riotgames.league.teamfighttacticstw",   ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.riotgames.league.teamfighttactics",     ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.riotgames.league.wildriftvn",           ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.riotgames.league.wildrifttw",           ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.riotgames.league.wildrift",             ONEPLUS_8_PRO);
-        DEVICE_MAP.put("vng.games.revelation.mobile",               ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.tencent.tmgp.pubgmhd",                  ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.miHoYo.GenshinImpact",                  ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.netease.lztgglobal",                    ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.mojang.minecraftpe",                    ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.YoStar.AetherGazer",                    ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.garena.game.lmjx",                      ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.ngame.allstar.eu",                      ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.vng.pubgmobile",                        ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.pubg.krmobile",                         ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.pubg.imobile",                          ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.rekoo.pubgm",                           ONEPLUS_8_PRO);
-        DEVICE_MAP.put("com.tencent.ig",                            ONEPLUS_8_PRO);
-        
-
-        // OnePlus 9 Pro
-        DEVICE_MAP.put("com.epicgames.fortnite",                    ONEPLUS_9_PRO);
-        DEVICE_MAP.put("com.epicgames.portal",                      ONEPLUS_9_PRO);
-        DEVICE_MAP.put("com.tencent.lolm",                          ONEPLUS_9_PRO);
-        DEVICE_MAP.put("jp.konami.pesam",                           ONEPLUS_9_PRO);
+        // OnePlus 12
+        DEVICE_MAP.put("com.mojang.minecraftpe",                    ONEPLUS_12);
+        DEVICE_MAP.put("com.YoStar.AetherGazer",                    ONEPLUS_12);
+        DEVICE_MAP.put("com.garena.game.lmjx",                      ONEPLUS_12);
+        DEVICE_MAP.put("com.ngame.allstar.eu",                      ONEPLUS_12);
+        DEVICE_MAP.put("com.epicgames.fortnite",                    ONEPLUS_12);
+        DEVICE_MAP.put("com.epicgames.portal",                      ONEPLUS_12);
+        DEVICE_MAP.put("com.tencent.lolm",                          ONEPLUS_12);
+        DEVICE_MAP.put("jp.konami.pesam",                           ONEPLUS_12);
 
         // Poco F5
         DEVICE_MAP.put("com.dts.freefiremax",                       POCO_F5);
         DEVICE_MAP.put("com.dts.freefire",                          POCO_F5);
-
-        // Sony Xperia 5
-        DEVICE_MAP.put("com.tencent.tmgp.kr.codm",                  SONY_XPERIA_5);
-        DEVICE_MAP.put("com.garena.game.codm",                      SONY_XPERIA_5);
-        DEVICE_MAP.put("com.garena.game.kgvn",                      SONY_XPERIA_5);
-        DEVICE_MAP.put("com.vng.codmvn",                            SONY_XPERIA_5);
-
-        // Xiaomi Mi 11T Pro
-        DEVICE_MAP.put("com.ea.gp.apexlegendsmobilefps",            MI_11T_PRO);
-        DEVICE_MAP.put("com.levelinfinite.hotta.gp",                MI_11T_PRO);
-        DEVICE_MAP.put("com.supercell.clashofclans",                MI_11T_PRO);
-        DEVICE_MAP.put("com.mobilelegends.mi",                      MI_11T_PRO);
-        DEVICE_MAP.put("com.vng.mlbbvn",                            MI_11T_PRO);
-
+        DEVICE_MAP.put("com.garena.game.codm",                      POCO_F5);
+        DEVICE_MAP.put("com.garena.game.kgvn",                      POCO_F5);
+        
         // Xiaomi 13 Pro
         DEVICE_MAP.put("com.levelinfinite.sgameGlobal",             MI_13_PRO);
         DEVICE_MAP.put("com.tencent.tmgp.sgame",                    MI_13_PRO);
+        DEVICE_MAP.put("com.ea.gp.apexlegendsmobilefps",            MI_13_PRO);
+        DEVICE_MAP.put("com.levelinfinite.hotta.gp",                MI_13_PRO);
+        DEVICE_MAP.put("com.supercell.clashofclans",                MI_13_PRO);
+        DEVICE_MAP.put("com.mobilelegends.mi",                      MI_13_PRO);
+        DEVICE_MAP.put("com.vng.mlbbvn",                            MI_13_PRO);
+
+        
     }
 }

@@ -33,7 +33,7 @@ Hook specific process/apps/games to spoof your device as different model/device 
 
 ## Getting Started
 
-To get started with Game Unlocker, follow these steps:
+To get started with Process Hook, follow these steps:
 
 1. Ensure that your Android device is rooted.
 

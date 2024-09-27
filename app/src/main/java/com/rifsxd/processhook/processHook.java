@@ -55,6 +55,15 @@ public class processHook implements IXposedHookLoadPackage {
         if (properties.bootloader != null) {
             setPropValue("BOOTLOADER", properties.bootloader);
         }
+        if (properties.username != null) {
+            setPropValue("USER", properties.username);
+        }
+        if (properties.hostname != null) {
+            setPropValue("HOST", properties.hostname);
+        }
+        if (properties.fingerprint != null) {
+            setPropValue("FINGERPRINT", properties.fingerprint);
+        }
     }
 
     private void spoofRefreshRate(deviceInfo properties) {

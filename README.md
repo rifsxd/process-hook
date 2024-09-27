@@ -64,6 +64,7 @@ Report any suggestions/issues with games [here](https://github.com/rifsxd/proces
   <summary>Click to expand the list of supported apps</summary>
 
   - [Device Info](https://play.google.com/store/apps/details?id=com.ytheekshana.deviceinfo&hl=en)
+  - [Device Info HW](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&hl=en)
 
 </details>
 

@@ -9,22 +9,22 @@ public class deviceProperties {
 
 
     // Predefined Debug Profile
-    public static final deviceInfo DEBUG_1 = new deviceInfo("DEBUG_MAUFACTURER", "DEBUG_BRAND", "DEBUG_PRODUCT", "DEBUG_DEVICE", "DEBUG_MODEL", "DEBUG_HARDWARE", "DEBUG_BOARD", "DEBUG_BOOTLOADER", "120.00");
+    public static final deviceInfo DEBUG_1 = new deviceInfo("DEBUG_MAUFACTURER", "DEBUG_BRAND", "DEBUG_PRODUCT", "DEBUG_DEVICE", "DEBUG_MODEL", "DEBUG_HARDWARE", "DEBUG_BOARD", "DEBUG_BOOTLOADER", "120.00", "DEBUG_USER", "DEBUG_HOST", "brand/product/model:15/VP1A:220924.014/R.202409241234:user/release-keys");
 
     // Props Structure [ manufacturer -> brand -> product -> device -> model -> hardware -> platform -> board -> bootloader -> refreshrate | null => disable props spoof ]
 
-    //                                                                          manufacturer    brand           product             device          model               hardware    board   bootloader  refreshrate
+    //                                                                          manufacturer    brand           product             device          model               hardware        board       bootloader      refreshrate     user    host    fingerprint
 
     // Predefined Device Profiles
-    public static final deviceInfo ROG_PHONE_8          =       new deviceInfo("asus",          "asus",         "WW_AI2401",        "AI2401",       "ASUS_AI2401",      "qcom",     null,   null,   "165");
-    public static final deviceInfo SAMSUNG_S24_ULTRA    =       new deviceInfo("samsung",       "samsung",      "e3qxeea",          "SM-S928B",     "SM-S928B",         "qcom",     null,   null,   "120");
-    public static final deviceInfo BLACKSHARK_5_PRO     =       new deviceInfo("blackshark",    "blackshark",   "KTUS-A0",          "KTUS-A0",      "SHARK KTUS-A0",    "qcom",     null,   null,   "120");
-    public static final deviceInfo REALME_GT6_5G        =       new deviceInfo("realme",        "realme",       "RMX3800",          "RE5C4FL1",     "RMX3800",          "qcom",     null,   null,   "120");
-    public static final deviceInfo ONEPLUS_12           =       new deviceInfo("OnePlus",       "OnePlus",      "CPH2581",          "CPH2581",      "CPH2581",          "qcom",     null,   null,   "120");
-    public static final deviceInfo VIVO_IQOO_11_PRO     =       new deviceInfo("vivo",          "vivo",         null,               "V2243A",       null,               "qcom",     null,   null,   "120");
-    public static final deviceInfo POCO_F5              =       new deviceInfo("Xiaomi",        "Xiaomi",       null,               "23049PCD8G",   null,               "qcom",     null,   null,   "120");
-    public static final deviceInfo MI_11T_PRO           =       new deviceInfo("Xiaomi",        "Xiaomi",       null,               "2107113SI",    null,               "qcom",     null,   null,   "120");
-    public static final deviceInfo MI_13_PRO            =       new deviceInfo("Xiaomi",        "Xiaomi",       null,               "2210132C",     null,               "qcom",     null,   null,   "120");
+    public static final deviceInfo ROG_PHONE_8          =       new deviceInfo("asus",          "asus",         "WW_AI2401",        "AI2401",       "ROG Phone 8",      "qcom",         null,       null,           "165",          null,   null,   null);
+    public static final deviceInfo SAMSUNG_S24_ULTRA    =       new deviceInfo("samsung",       "samsung",      "e3qxeea",          "SM-S928B",     "Galaxy S24 Ultra", "qcom",         null,       null,           "120",          null,   null,   null);
+    public static final deviceInfo BLACKSHARK_5_PRO     =       new deviceInfo("blackshark",    "blackshark",   "KTUS-A0",          "KTUS-A0",      "Shark 5 Pro",      "qcom",         null,       null,           "120",          null,   null,   null);
+    public static final deviceInfo REALME_GT6_5G        =       new deviceInfo("realme",        "realme",       "RMX3800",          "RE5C4FL1",     "Realme GT6 5G",    "qcom",         null,       null,           "120",          null,   null,   null);
+    public static final deviceInfo ONEPLUS_12           =       new deviceInfo("oneplus",       "oneplus",      "CPH2581",          "CPH2581",      "OnePlus 12",       "qcom",         null,       null,           "120",          null,   null,   null);
+    public static final deviceInfo VIVO_IQOO_11_PRO     =       new deviceInfo("vivo",          "vivo",         null,               "V2243A",       "IQOO 11 Pro",      "qcom",         null,       null,           "120",          null,   null,   null);
+    public static final deviceInfo POCO_F5              =       new deviceInfo("xiaomi",        "xiaomi",       null,               "23049PCD8G",   "Poco F5",          "qcom",         null,       null,           "120",          null,   null,   null);
+    public static final deviceInfo MI_11T_PRO           =       new deviceInfo("xiaomi",        "xiaomi",       null,               "2107113SI",    "Mi 11T Pro",       "qcom",         null,       null,           "120",          null,   null,   null);
+    public static final deviceInfo MI_13_PRO            =       new deviceInfo("xiaomi",        "xiaomi",       null,               "2210132C",     "Mi 13 Pro",        "qcom",         null,       null,           "120",          null,   null,   null);
 
     // Use predefined device profiles
     static {    
@@ -32,7 +32,7 @@ public class deviceProperties {
 
         // Debug Device
         DEVICE_MAP.put("com.ytheekshana.deviceinfo",                DEBUG_1);
-        DEVICE_MAP.put("ru.andr7e.deviceinfohw",                    DEBUG_1);
+        DEVICE_MAP.put("ru.andr7e.deviceinfohw",                    SAMSUNG_S24_ULTRA);
 
         // Asus ROG Phone 8
         DEVICE_MAP.put("com.gameloft.android.ANMP.GloftA9HM",       ROG_PHONE_8);

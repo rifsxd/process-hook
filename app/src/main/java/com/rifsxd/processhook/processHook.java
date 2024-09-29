@@ -1,18 +1,19 @@
 package com.rifsxd.processhook;
 
 import android.annotation.SuppressLint;
+import android.view.WindowManager;
+import android.content.Context;
+import android.view.Display;
 import android.os.Build;
 import android.util.Log;
-import android.view.Display;
-import android.content.Context;
-import android.view.WindowManager;
 
 import java.lang.reflect.Field;
 
+import de.robv.android.xposed.callbacks.XC_LoadPackage;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedBridge;
-import de.robv.android.xposed.callbacks.XC_LoadPackage;
+
 
 @SuppressLint("DiscouragedPrivateApi")
 public class processHook implements IXposedHookLoadPackage {
@@ -21,8 +22,10 @@ public class processHook implements IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
+
         String packageName = loadPackageParam.packageName;
         deviceInfo properties = deviceProperties.DEVICE_MAP.get(packageName);
+
         if (properties != null) {
             spoofDeviceProperties(properties);
             spoofRefreshRate(properties);
@@ -31,42 +34,54 @@ public class processHook implements IXposedHookLoadPackage {
     }
 
     private void spoofDeviceProperties(deviceInfo properties) {
+
         if (properties.manufacturer != null) {
             setPropValue("MANUFACTURER", properties.manufacturer);
         }
+
         if (properties.brand != null) {
             setPropValue("BRAND", properties.brand);
         }
+
         if (properties.product != null) {
             setPropValue("PRODUCT", properties.product);
         }
+
         if (properties.device != null) {
             setPropValue("DEVICE", properties.device);
         }
+
         if (properties.model != null) {
             setPropValue("MODEL", properties.model);
         }
+
         if (properties.hardware != null) {
             setPropValue("HARDWARE", properties.hardware);
         }
+
         if (properties.board != null) {
             setPropValue("BOARD", properties.board);
         }
+
         if (properties.bootloader != null) {
             setPropValue("BOOTLOADER", properties.bootloader);
         }
+
         if (properties.username != null) {
             setPropValue("USER", properties.username);
         }
+
         if (properties.hostname != null) {
             setPropValue("HOST", properties.hostname);
         }
+
         if (properties.fingerprint != null) {
             setPropValue("FINGERPRINT", properties.fingerprint);
         }
     }
 
     private void spoofRefreshRate(deviceInfo properties) {
+
         if (properties.refreshrate != null) {
             try {
                 float spoofedRefreshRate = Float.parseFloat(properties.refreshrate);
@@ -84,6 +99,7 @@ public class processHook implements IXposedHookLoadPackage {
     }
 
     private static void setPropValue(String key, Object value) {
+
         try {
             Log.d(TAG, "Defining prop " + key + " to " + value);
             Field field = Build.class.getDeclaredField(key);

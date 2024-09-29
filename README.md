@@ -21,8 +21,22 @@ Hook specific process/apps/games to spoof your device as different model/device 
 ## Features
 
 - Device spoofing for enhanced gaming experiences.
+- Display refreshrate spoofing to unlock higher framerate options. ( To test this spoof install any app from the [Debug Lists](#supported-debug-apps) and check display specifications )
 - Compatibility with a wide range of popular gaming applications.
 - Easy installation and no extra configuration.
+
+## High End Devices
+
+The following is the current list of devices that Process Hook will spoof your device into for supported games and apps. Click on the device names to view the corresponding profile in the code:
+
+- [ROG_PHONE_8](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L18)
+- [SAMSUNG_S24_ULTRA](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L19)
+- [BLACKSHARK_5_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L20)
+- [REALME_GT6_5G](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L21)
+- [ONEPLUS_12](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L22)
+- [VIVO_IQOO_11_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L23)
+- [POCO_F6_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L24)
+- [MI_14_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L25)
 
 ## Table of Contents
 
@@ -65,6 +79,7 @@ Report any suggestions/issues with games [here](https://github.com/rifsxd/proces
 
   - [Device Info](https://play.google.com/store/apps/details?id=com.ytheekshana.deviceinfo&hl=en)
   - [Device Info HW](https://play.google.com/store/apps/details?id=ru.andr7e.deviceinfohw&hl=en)
+  - [Aida64](https://play.google.com/store/apps/details?id=com.finalwire.aida64&hl=en)
 
 </details>
 
@@ -83,6 +98,7 @@ Report any suggestions/issues with games [here](https://github.com/rifsxd/proces
   - [Call of Duty®: Mobile - Garena](https://play.google.com/store/apps/details?id=com.garena.game.codm&hl=en&gl=US)
   - [Clash of Clans](https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en&gl=US)
   - [Cyber Hunter](https://play.google.com/store/apps/details?id=com.netease.lztgglobal&hl=en&gl=US)
+  - [Dead by Daylight: Mobile](https://play.google.com/store/apps/details?id=com.netease.dbdena&hl=en)
   - [EA SPORTS FC™ Mobile Soccer](https://play.google.com/store/apps/details?id=com.ea.gp.fifamobile&hl=en&gl=US)
   - [Farlight 84](https://play.google.com/store/apps/details?id=com.miraclegames.farlight84&hl=en)
   - [Fortnite Portal](https://play.google.com/store/apps/details?id=com.epicgames.portal&hl=en&gl=US)
@@ -101,6 +117,7 @@ Report any suggestions/issues with games [here](https://github.com/rifsxd/proces
   - [PUBG Mobile Beta](https://play.google.com/store/apps/details?id=com.tencent.ig&hl=en&gl=US)
   - [PUBG Mobile VN](https://play.google.com/store/apps/details?id=com.vng.pubgmobile&hl=en&gl=US)
   - [PUBG Mobile](https://play.google.com/store/apps/details?id=com.pubg.krmobile&hl=en&gl=US)
+  - [PUBG Mobile: Lite](https://play.google.com/store/apps/details?id=com.tencent.iglite&hl=en)
   - [PUBG: Exhilarating Battlefield](https://play.google.com/store/apps/details?id=com.tencent.tmgp.pubgmhd&hl=en&gl=US)
   - [Shadowgun Legends: Online FPS](https://play.google.com/store/apps/details?id=com.madfingergames.legends&hl=en&gl=US)
   - [Tower of Fantasy](https://play.google.com/store/apps/details?id=com.levelinfinite.hotta.gp&hl=en&gl=US)

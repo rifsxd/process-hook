@@ -3,106 +3,276 @@ package com.rifsxd.processhook;
 import java.util.HashMap;
 import java.util.Map;
 
-public class deviceProperties {
+/**
+ * The {@code deviceProperties} class contains predefined device profiles
+ * and a mapping of specific applications to those profiles. These profiles
+ * simulate different device properties for use in testing or device-specific
+ * optimizations in apps. 
+ */
+public final class deviceProperties {
 
-    public static final Map<String, deviceInfo> DEVICE_MAP;
+    // Map that holds associations between app package names and deviceInfo objects
+    public static final Map<String, deviceInfo> DEVICE_MAP = new HashMap<>();
 
     // Predefined Debug Profile
-    public static final deviceInfo DEBUG_1 = new deviceInfo("DEBUG_MAUFACTURER", "DEBUG_BRAND", "DEBUG_PRODUCT", "DEBUG_DEVICE", "DEBUG_MODEL", "DEBUG_HARDWARE", "DEBUG_BOARD", "DEBUG_BOOTLOADER", "120.00", "DEBUG_USER", "DEBUG_HOST", "brand/product/model:15/VP1A:220924.014/R.202409241234:user/release-keys");
-
-    // Props Structure [ manufacturer -> brand -> product -> device -> model -> hardware -> board -> bootloader -> refreshrate -> user -> host -> fingerprint | null => disable props spoof ]
-
-    //                                                                          manufacturer    brand           product             device          model               hardware        board       bootloader      refreshrate     user    host    fingerprint
+    public static final deviceInfo DEBUG_1 = new deviceInfo(
+        
+        "DEBUG_MAUFACTURER",     // Manufacturer for the debug profile
+        "DEBUG_BRAND",           // Brand for the debug profile
+        "DEBUG_PRODUCT",         // Product identifier
+        "DEBUG_DEVICE",          // Device name
+        "DEBUG_MODEL",           // Model number
+        "DEBUG_HARDWARE",        // Hardware identifier
+        "DEBUG_BOARD",           // Board identifier
+        "DEBUG_BOOTLOADER",      // Bootloader version
+        "120.00",                // Refresh rate (Hz)
+        "DEBUG_USER",            // Username property
+        "DEBUG_HOST",            // Hostname property
+        "brand/product/model:15/VP1A:220924.014/R.202409241234:user/release-keys" // Fingerprint identifier
+    );
 
     // Predefined Device Profiles
-    public static final deviceInfo ROG_PHONE_8          =       new deviceInfo("asus",          "asus",         "WW_AI2401",        "AI2401",       "ASUS_AI2401",      "qcom",         null,       null,           "165",          null,   null,   null);
-    public static final deviceInfo SAMSUNG_S24_ULTRA    =       new deviceInfo("samsung",       "samsung",      "e3qxeea",          "SM-S928B",     "SM-S928B",         "qcom",         null,       null,           "120",          null,   null,   null);
-    public static final deviceInfo BLACKSHARK_5_PRO     =       new deviceInfo("blackshark",    "blackshark",   "KTUS-A0",          "KTUS-A0",      "Shark KTUS-A0",    "qcom",         null,       null,           "120",          null,   null,   null);
-    public static final deviceInfo REALME_GT6_5G        =       new deviceInfo("realme",        "realme",       "RMX3800",          "RE5C4FL1",     "RMX3800",          "qcom",         null,       null,           "120",          null,   null,   null);
-    public static final deviceInfo ONEPLUS_12           =       new deviceInfo("oneplus",       "oneplus",      "CPH2581",          "CPH2581",      "CPH2581",          "qcom",         null,       null,           "120",          null,   null,   null);
-    public static final deviceInfo VIVO_IQOO_11_PRO     =       new deviceInfo("vivo",          "vivo",         "V2243A",           "V2243A",       "V2243A",           "qcom",         null,       null,           "120",          null,   null,   null);
-    public static final deviceInfo POCO_F6_PRO          =       new deviceInfo("xiaomi",        "xiaomi",       "vermeer",          "23113RKC6G",   "23049PCD8G",       "qcom",         null,       null,           "120",          null,   null,   null);
-    public static final deviceInfo MI_14_PRO            =       new deviceInfo("xiaomi",        "xiaomi",       "shennong",         "23116PN5BG",   "23116PN5BG",       "qcom",         null,       null,           "120",          null,   null,   null);
-    
-    // Use predefined device profiles
+
+    // ROG Phone 8 Profile
+    public static final deviceInfo ROG_PHONE_8 = new deviceInfo(
+        "asus",             // Manufacturer
+        "asus",             // Brand
+        "WW_AI2401",        // Product
+        "AI2401",           // Device
+        "ASUS_AI2401",      // Model
+        "qcom",             // Hardware
+        null,               // Board (optional, null if not available)
+        null,               // Bootloader (optional)
+        "165",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // Samsung Galaxy S24 Ultra Profile
+    public static final deviceInfo SAMSUNG_S24_ULTRA = new deviceInfo(
+        "samsung",          // Manufacturer
+        "samsung",          // Brand
+        "e3qxeea",          // Product
+        "SM-S928B",         // Device 
+        "SM-S928B",         // Model 
+        "qcom",             // Hardware
+        null,               // Board (optional)
+        null,               // Bootloader (optional)
+        "120",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // Black Shark 5 Pro Profile
+    public static final deviceInfo BLACKSHARK_5_PRO = new deviceInfo(
+        "blackshark",       // Manufacturer
+        "blackshark",       // Brand
+        "KTUS-A0",          // Product
+        "KTUS-A0",          // Device
+        "Shark KTUS-A0",    // Model
+        "qcom",             // Hardware
+        null,               // Board (optional)
+        null,               // Bootloader (optional)
+        "120",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // Realme GT6 5G Profile
+    public static final deviceInfo REALME_GT6_5G = new deviceInfo(
+        "realme",           // Manufacturer
+        "realme",           // Brand
+        "RMX3800",          // Product
+        "RE5C4FL1",         // Device
+        "RMX3800",          // Model
+        "qcom",             // Hardware
+        null,               // Board (optional)
+        null,               // Bootloader (optional)
+        "120",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // OnePlus 12 Profile
+    public static final deviceInfo ONEPLUS_12 = new deviceInfo(
+        "oneplus",          // Manufacturer
+        "oneplus",          // Brand
+        "CPH2581",          // Product
+        "CPH2581",          // Device
+        "CPH2581",          // Model
+        "qcom",             // Hardware
+        null,               // Board (optional)
+        null,               // Bootloader (optional)
+        "120",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // Vivo iQOO 11 Pro Profile
+    public static final deviceInfo VIVO_IQOO_11_PRO = new deviceInfo(
+        "vivo",             // Manufacturer
+        "vivo",             // Brand
+        "V2243A",           // Product
+        "V2243A",           // Device
+        "V2243A",           // Model
+        "qcom",             // Hardware
+        null,               // Board (optional)
+        null,               // Bootloader (optional)
+        "120",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // Poco F6 Pro Profile
+    public static final deviceInfo POCO_F6_PRO = new deviceInfo(
+        "xiaomi",           // Manufacturer
+        "xiaomi",           // Brand
+        "vermeer",          // Product
+        "23113RKC6G",       // Device
+        "23049PCD8G",       // Model
+        "qcom",             // Hardware
+        null,               // Board (optional)
+        null,               // Bootloader (optional)
+        "120",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // Xiaomi 14 Pro Profile
+    public static final deviceInfo MI_14_PRO = new deviceInfo(
+        "xiaomi",           // Manufacturer
+        "xiaomi",           // Brand
+        "shennong",         // Product
+        "23116PN5BG",       // Device
+        "23116PN5BG",       // Model
+        "qcom",             // Hardware
+        null,               // Board (optional)
+        null,               // Bootloader (optional)
+        "120",              // Refresh rate (Hz)
+        null,               // Username (optional)
+        null,               // Hostname (optional)
+        null                // Fingerprint (optional)
+    );
+
+    // Static block to populate DEVICE_MAP with device profiles mapped to specific apps
     static {
 
-        DEVICE_MAP = new HashMap<>();
+        // Debug device mapping
+        DEVICE_MAP.put("com.ytheekshana.deviceInfo", DEBUG_1);
+        DEVICE_MAP.put("ru.andr7e.deviceInfohw", ROG_PHONE_8);
+        DEVICE_MAP.put("com.finalwire.aida64", SAMSUNG_S24_ULTRA);
 
-        // Debug Device
-        DEVICE_MAP.put("com.ytheekshana.deviceinfo",                DEBUG_1);
-        DEVICE_MAP.put("ru.andr7e.deviceinfohw",                    ROG_PHONE_8);
-        DEVICE_MAP.put("com.finalwire.aida64",                      SAMSUNG_S24_ULTRA);
+        // Populate device map for ROG Phone 8 apps
+        String[] rogPhoneApps = {
+            "com.gameloft.android.ANMP.GloftA9HM",
+            "com.activision.callofudty.warzone",
+            "com.ea.game.nfs14_row",
+            "net.wargaming.wot.blitz",
+            "com.pearlabyss.blackdesertm.gl",
+            "com.pearlabyss.blackdesertm",
+            "com.madfingergames.legends",
+            "com.ea.gp.fifamobile"
+        };
+        addToDeviceMap(rogPhoneApps, ROG_PHONE_8);
 
-        // Asus ROG Phone 8
-        DEVICE_MAP.put("com.gameloft.android.ANMP.GloftA9HM",       ROG_PHONE_8);
-        DEVICE_MAP.put("com.activision.callofudty.warzone",         ROG_PHONE_8);
-        DEVICE_MAP.put("com.ea.game.nfs14_row",                     ROG_PHONE_8);
-        DEVICE_MAP.put("net.wargaming.wot.blitz",                   ROG_PHONE_8);
-        DEVICE_MAP.put("com.pearlabyss.blackdesertm.gl",            ROG_PHONE_8);
-        DEVICE_MAP.put("com.pearlabyss.blackdesertm",               ROG_PHONE_8);
-        DEVICE_MAP.put("com.madfingergames.legends",                ROG_PHONE_8);
-        DEVICE_MAP.put("com.ea.gp.fifamobile",                      ROG_PHONE_8);
+        // Populate device map for Samsung Galaxy S24 Ultra apps
+        String[] samsungApps = {
+            "com.activision.callofduty.shooter",
+            "com.miraclegames.farlight84",
+            "vng.games.revelation.mobile",
+            "com.tencent.tmgp.pubgmhd",
+            "com.miHoYo.GenshinImpact",
+            "com.netease.dbdena",
+            "com.netease.lztgglobal"
+        };
+        addToDeviceMap(samsungApps, SAMSUNG_S24_ULTRA);
 
-        // Samsung Galaxy S24 Ultra
-        DEVICE_MAP.put("com.activision.callofduty.shooter",         SAMSUNG_S24_ULTRA);
-        DEVICE_MAP.put("com.miraclegames.farlight84",               SAMSUNG_S24_ULTRA);
-        DEVICE_MAP.put("vng.games.revelation.mobile",               SAMSUNG_S24_ULTRA);
-        DEVICE_MAP.put("com.tencent.tmgp.pubgmhd",                  SAMSUNG_S24_ULTRA);
-        DEVICE_MAP.put("com.miHoYo.GenshinImpact",                  SAMSUNG_S24_ULTRA);
-        DEVICE_MAP.put("com.netease.dbdena",                        SAMSUNG_S24_ULTRA);
-        DEVICE_MAP.put("com.netease.lztgglobal",                    SAMSUNG_S24_ULTRA);
-        
+        // Populate device map for Black Shark 5 Pro apps
+        String[] blackSharkApps = {
+            "com.proximabeta.mf.uamo",
+            "com.tencent.tmgp.kr.codm",
+            "com.vng.codmvn",
+            "com.vng.pubgmobile",
+            "com.pubg.krmobile",
+            "com.pubg.imobile",
+            "com.rekoo.pubgm",
+            "com.tencent.ig"
+        };
+        addToDeviceMap(blackSharkApps, BLACKSHARK_5_PRO);
 
-        // Black Shark 4
-        DEVICE_MAP.put("com.proximabeta.mf.uamo",                   BLACKSHARK_5_PRO);
-        DEVICE_MAP.put("com.tencent.tmgp.kr.codm",                  BLACKSHARK_5_PRO);
-        DEVICE_MAP.put("com.vng.codmvn",                            BLACKSHARK_5_PRO);
-        DEVICE_MAP.put("com.vng.pubgmobile",                        BLACKSHARK_5_PRO);
-        DEVICE_MAP.put("com.pubg.krmobile",                         BLACKSHARK_5_PRO);
-        DEVICE_MAP.put("com.pubg.imobile",                          BLACKSHARK_5_PRO);
-        DEVICE_MAP.put("com.rekoo.pubgm",                           BLACKSHARK_5_PRO);
-        DEVICE_MAP.put("com.tencent.ig",                            BLACKSHARK_5_PRO);
+        // Populate device map for Vivo iQOO 11 Pro apps
+        String[] vivoApps = {
+            "com.tencent.tmgp.gnyx",
+            "com.tencent.tmgp.cod",
+            "com.tencent.tmgp.cf",
+            "com.tencent.KiHan",
+            "com.tencent.iglite"
+        };
+        addToDeviceMap(vivoApps, VIVO_IQOO_11_PRO);
 
-        // Vivo iQOO 11 Pro
-        DEVICE_MAP.put("com.tencent.tmgp.gnyx",                     VIVO_IQOO_11_PRO);
-        DEVICE_MAP.put("com.tencent.tmgp.cod",                      VIVO_IQOO_11_PRO);
-        DEVICE_MAP.put("com.tencent.tmgp.cf",                       VIVO_IQOO_11_PRO);
-        DEVICE_MAP.put("com.tencent.KiHan",                         VIVO_IQOO_11_PRO);
-        DEVICE_MAP.put("com.tencent.iglite",                        VIVO_IQOO_11_PRO);
-        
-        // Realme GT6 5G
-        DEVICE_MAP.put("com.riotgames.league.teamfighttacticsvn",   REALME_GT6_5G);
-        DEVICE_MAP.put("com.riotgames.league.teamfighttacticstw",   REALME_GT6_5G);
-        DEVICE_MAP.put("com.riotgames.league.teamfighttactics",     REALME_GT6_5G);
-        DEVICE_MAP.put("com.garena.game.lmjx",                      REALME_GT6_5G);
-        DEVICE_MAP.put("com.ngame.allstar.eu",                      REALME_GT6_5G);
-        DEVICE_MAP.put("com.epicgames.fortnite",                    REALME_GT6_5G);
-        DEVICE_MAP.put("com.epicgames.portal",                      REALME_GT6_5G);
-        
-        // OnePlus 12
-        DEVICE_MAP.put("com.mojang.minecraftpe",                    ONEPLUS_12);
-        DEVICE_MAP.put("com.YoStar.AetherGazer",                    ONEPLUS_12);
-        DEVICE_MAP.put("com.riotgames.league.wildriftvn",           ONEPLUS_12);
-        DEVICE_MAP.put("com.riotgames.league.wildrifttw",           ONEPLUS_12);
-        DEVICE_MAP.put("com.riotgames.league.wildrift",             ONEPLUS_12);
-        DEVICE_MAP.put("com.tencent.lolm",                          ONEPLUS_12);
-        DEVICE_MAP.put("jp.konami.pesam",                           ONEPLUS_12);
+        // Populate device map for Realme GT6 5G apps
+        String[] realmeApps = {
+            "com.riotgames.league.teamfighttacticsvn",
+            "com.riotgames.league.teamfighttacticstw",
+            "com.riotgames.league.teamfighttactics",
+            "com.garena.game.lmjx",
+            "com.ngame.allstar.eu",
+            "com.epicgames.fortnite",
+            "com.epicgames.portal"
+        };
+        addToDeviceMap(realmeApps, REALME_GT6_5G);
 
-        // Poco F6 Pro
-        DEVICE_MAP.put("com.dts.freefiremax",                       POCO_F6_PRO);
-        DEVICE_MAP.put("com.dts.freefire",                          POCO_F6_PRO);
-        DEVICE_MAP.put("com.garena.game.codm",                      POCO_F6_PRO);
-        DEVICE_MAP.put("com.garena.game.kgvn",                      POCO_F6_PRO);
-        
-        // Xiaomi 14 Pro
-        DEVICE_MAP.put("com.levelinfinite.sgameGlobal",             MI_14_PRO);
-        DEVICE_MAP.put("com.tencent.tmgp.sgame",                    MI_14_PRO);
-        DEVICE_MAP.put("com.ea.gp.apexlegendsmobilefps",            MI_14_PRO);
-        DEVICE_MAP.put("com.levelinfinite.hotta.gp",                MI_14_PRO);
-        DEVICE_MAP.put("com.supercell.clashofclans",                MI_14_PRO);
-        DEVICE_MAP.put("com.mobilelegends.mi",                      MI_14_PRO);
-        DEVICE_MAP.put("com.vng.mlbbvn",                            MI_14_PRO);
+        // Populate device map for OnePlus 12 apps
+        String[] onePlusApps = {
+            "com.mojang.minecraftpe",
+            "com.YoStar.AetherGazer",
+            "com.riotgames.league.wildriftvn",
+            "com.riotgames.league.wildrifttw",
+            "com.riotgames.league.wildrift",
+            "com.tencent.lolm",
+            "jp.konami.pesam"
+        };
+        addToDeviceMap(onePlusApps, ONEPLUS_12);
 
+        // Populate device map for Poco F6 Pro apps
+        String[] pocoApps = {
+            "com.dts.freefiremax",
+            "com.dts.freefire",
+            "com.garena.game.codm",
+            "com.garena.game.kgvn"
+        };
+        addToDeviceMap(pocoApps, POCO_F6_PRO);
+
+        // Populate device map for Xiaomi 14 Pro apps
+        String[] mi14Apps = {
+            "com.levelinfinite.sgameGlobal",
+            "com.tencent.tmgp.sgame",
+            "com.ea.gp.apexlegendsmobilefps",
+            "com.levelinfinite.hotta.gp",
+            "com.supercell.clashofclans",
+            "com.mobilelegends.mi",
+            "com.vng.mlbbvn"
+        };
+        addToDeviceMap(mi14Apps, MI_14_PRO);
+    }
+
+    /**
+     * Adds an array of app package names to the DEVICE_MAP associated with a specific device profile.
+     * 
+     * @param apps       An array of application package names
+     * @param deviceInfo The {@code deviceInfo} object containing the device properties
+     */
+    private static void addToDeviceMap(String[] apps, deviceInfo deviceInfo) {
+
+        for (String app : apps) {
+            DEVICE_MAP.put(app, deviceInfo);
+        }
     }
 }

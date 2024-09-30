@@ -172,19 +172,19 @@ public final class deviceProperties {
         // Populate device map for ROG Phone 8 apps
         String[] rogPhoneApps = {
             "com.gameloft.android.ANMP.GloftA9HM",
+            "com.activision.callofduty.shooter",
             "com.activision.callofudty.warzone",
             "com.ea.game.nfs14_row",
             "net.wargaming.wot.blitz",
             "com.pearlabyss.blackdesertm.gl",
             "com.pearlabyss.blackdesertm",
-            "com.madfingergames.legends",
-            "com.ea.gp.fifamobile"
+            "com.madfingergames.legends"
         };
         addToDeviceMap(rogPhoneApps, ROG_PHONE_8);
 
         // Populate device map for Samsung Galaxy S24 Ultra apps
         String[] samsungApps = {
-            "com.activision.callofduty.shooter",
+            "com.ea.gp.fifamobile",
             "com.miraclegames.farlight84",
             "vng.games.revelation.mobile",
             "com.tencent.tmgp.pubgmhd",

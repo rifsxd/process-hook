@@ -1,6 +1,5 @@
 .gradle
 build
-setenv.sh
 install.sh
 build.sh
 setenv.sh

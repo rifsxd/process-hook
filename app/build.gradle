@@ -10,7 +10,7 @@ android {
         applicationId "com.rifsxd.processhook"
         minSdkVersion 28
         targetSdkVersion 35
-        versionCode 1
+        versionCode 4
         versionName "1.3.0"
     }
 

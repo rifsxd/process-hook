@@ -29,14 +29,14 @@ Hook specific process/apps/games to spoof your device as different model/device 
 
 The following is the current list of devices that Process Hook will spoof your device into for supported games and apps. Click on the device names to view the corresponding profile in the code:
 
-- [ROG_PHONE_8](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L18)
-- [SAMSUNG_S24_ULTRA](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L19)
-- [BLACKSHARK_5_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L20)
-- [REALME_GT6_5G](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L21)
-- [ONEPLUS_12](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L22)
-- [VIVO_IQOO_11_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L23)
-- [POCO_F6_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L24)
-- [MI_14_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L25)
+- [ROG_PHONE_8](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L37)
+- [SAMSUNG_S24_ULTRA](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L53)
+- [BLACKSHARK_5_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L69)
+- [REALME_GT6_5G](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L85)
+- [ONEPLUS_12](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L101)
+- [VIVO_IQOO_11_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L117)
+- [POCO_F6_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L133)
+- [MI_14_PRO](app/src/main/java/com/rifsxd/processhook/deviceProperties.java#L149)
 
 ## Table of Contents
 

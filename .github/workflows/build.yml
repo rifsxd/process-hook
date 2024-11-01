@@ -28,9 +28,6 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Build debug APK
-      run: ./gradlew assembleDebug --stacktrace
-
     - name: Get App Version Name
       id: version
       run: echo "::set-output name=app_version::$(grep versionName app/build.gradle | sed -n 's/.*versionName \"\([0-9.]*\)\".*/\1/p')"

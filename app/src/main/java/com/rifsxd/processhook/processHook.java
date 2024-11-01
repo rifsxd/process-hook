@@ -19,7 +19,7 @@ import de.robv.android.xposed.XposedBridge;
 @SuppressLint("DiscouragedPrivateApi")
 public class processHook implements IXposedHookLoadPackage {
 
-    private static final String TAG = processHook.class.getSimpleName();
+    private final String TAG = processHook.class.getSimpleName();
 
     /**
      * This method is called when a package is loaded. It checks if the package
@@ -93,7 +93,7 @@ public class processHook implements IXposedHookLoadPackage {
      * @param key   The property name to be set (e.g., MANUFACTURER, BRAND).
      * @param value The new value for the property.
      */
-    private static void setPropValue(String key, Object value) {
+    private void setPropValue(String key, Object value) {
         if (value != null) {
             try {
                 Log.d(TAG, "Defining prop " + key + " to " + value);

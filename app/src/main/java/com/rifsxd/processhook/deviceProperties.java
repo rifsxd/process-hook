@@ -9,7 +9,7 @@ import java.util.Map;
  * simulate different device properties for use in testing or device-specific
  * optimizations in apps. 
  */
-public class deviceProperties {
+public final class deviceProperties {
 
     // Map that holds associations between app package names and deviceInfo objects
     public static final Map<String, deviceInfo> DEVICE_MAP = new HashMap<>();
@@ -165,8 +165,8 @@ public class deviceProperties {
     static {
 
         // Debug device mapping
-        DEVICE_MAP.put("com.ytheekshana.deviceInfo", DEBUG_1);
-        DEVICE_MAP.put("ru.andr7e.deviceInfohw", ROG_PHONE_8);
+        DEVICE_MAP.put("com.ytheekshana.deviceinfo", DEBUG_1);
+        DEVICE_MAP.put("ru.andr7e.deviceinfohw", ROG_PHONE_8);
         DEVICE_MAP.put("com.finalwire.aida64", SAMSUNG_S24_ULTRA);
 
         // Populate device map for ROG Phone 8 apps

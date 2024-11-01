@@ -1,4 +1,4 @@
-name: Debug Apk
+name: CI Apk
 on:
   push:
     branches:
@@ -32,15 +32,12 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
-    - name: Build debug APK
-      run: ./gradlew assembleDebug --stacktrace
-
     - name: Get App Version Name
       id: version
       run: echo "::set-output name=app_version::$(grep versionName app/build.gradle | sed -n 's/.*versionName \"\([0-9.]*\)\".*/\1/p')"
 
     - name: Rename APK
-      run: mv app/build/outputs/apk/debug/app-debug.apk process-hook-v${{ steps.version.outputs.app_version }}.apk
+      run: mv app/build/outputs/apk/release/app-release.apk process-hook-v${{ steps.version.outputs.app_version }}.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4

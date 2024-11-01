@@ -5,7 +5,7 @@ package com.rifsxd.processhook;
  * such as manufacturer, brand, and model, which can be used to simulate
  * or override device properties in various applications.
  */
-public final class deviceInfo {
+public class deviceInfo {
 
     // Fields representing different device properties
     String manufacturer;

@@ -9,7 +9,7 @@ import java.util.Map;
  * simulate different device properties for use in testing or device-specific
  * optimizations in apps. 
  */
-public final class deviceProperties {
+public class deviceProperties {
 
     // Map that holds associations between app package names and deviceInfo objects
     public static final Map<String, deviceInfo> DEVICE_MAP = new HashMap<>();

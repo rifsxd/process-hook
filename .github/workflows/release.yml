@@ -1,4 +1,4 @@
-name: Build Apk
+name: Release Build
 on: [workflow_dispatch]
 
 jobs:
@@ -33,13 +33,13 @@ jobs:
       run: echo "::set-output name=app_version::$(grep versionName app/build.gradle | sed -n 's/.*versionName \"\([0-9.]*\)\".*/\1/p')"
 
     - name: Rename APK
-      run: mv app/build/outputs/apk/release/app-release.apk process-hook-v${{ steps.version.outputs.app_version }}.apk
+      run: mv app/build/outputs/apk/release/app-release.apk process-hook-v${{ steps.version.outputs.app_version }}-release.apk
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: Process Hook
-        path: process-hook-v${{ steps.version.outputs.app_version }}.apk
+        path: process-hook-v${{ steps.version.outputs.app_version }}-release.apk
 
     - name: Create Release
       id: create_release
@@ -57,6 +57,6 @@ jobs:
         asset_url=$(curl -X POST \
           -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
           -H "Content-Type: application/octet-stream" \
-          --data-binary "@process-hook-v${{ steps.version.outputs.app_version }}.apk" \
-          "https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=process-hook-v${{ steps.version.outputs.app_version }}.apk")
+          --data-binary "@process-hook-v${{ steps.version.outputs.app_version }}-release.apk" \
+          "https://uploads.github.com/repos/${{ github.repository }}/releases/$release_id/assets?name=process-hook-v${{ steps.version.outputs.app_version }}-release.apk")
         echo "Uploaded asset: $asset_url"

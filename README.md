@@ -90,7 +90,7 @@ Report any suggestions/issues with games [here](https://github.com/rifsxd/proces
 
   - [Apex Legends Mobile](https://play.google.com/store/apps/details?id=com.ea.gp.apexlegendsmobilefps&hl=en&gl=US)
   - [Asphalt 9: Legends](https://play.google.com/store/apps/details?id=com.gameloft.android.ANMP.GloftA9HM&hl=en&gl=US)
-  - [Need for Speed: No Limits](https://play.google.com/store/details?id=com.ea.game.nfs14_row&hl=en&gl=US)
+  - [Need for Speed: No Limits](https://play.google.com/store/apps/details?id=com.ea.game.nfs14_row&hl=rn&gl=US)
   - [Battlegrounds Mobile India](https://play.google.com/store/apps/details?id=com.pubg.imobile&hl=en&gl=US)
   - [Black Desert Mobile](https://play.google.com/store/apps/details?id=com.pearlabyss.blackdesertm.gl&hl=en&gl=US)
   - [Call Of Duty: Mobile VN](https://play.google.com/store/apps/details?id=com.vng.codmvn&hl=en&gl=US)

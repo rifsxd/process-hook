@@ -188,6 +188,7 @@ public final class deviceProperties {
             "com.miraclegames.farlight84",
             "vng.games.revelation.mobile",
             "com.tencent.tmgp.pubgmhd",
+            "com.pubg.imobile",
             "com.miHoYo.GenshinImpact",
             "com.netease.dbdena",
             "com.netease.lztgglobal"
@@ -201,7 +202,6 @@ public final class deviceProperties {
             "com.vng.codmvn",
             "com.vng.pubgmobile",
             "com.pubg.krmobile",
-            "com.pubg.imobile",
             "com.rekoo.pubgm",
             "com.tencent.ig"
         };

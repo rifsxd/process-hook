@@ -167,7 +167,7 @@ public final class deviceProperties {
         // Debug device mapping
         DEVICE_MAP.put("com.ytheekshana.deviceinfo", DEBUG_1);
         DEVICE_MAP.put("ru.andr7e.deviceinfohw", ROG_PHONE_8);
-        DEVICE_MAP.put("com.finalwire.aida64", SAMSUNG_S24_ULTRA);
+        DEVICE_MAP.put("flar2.devcheck", SAMSUNG_S24_ULTRA);
 
         // Populate device map for ROG Phone 8 apps
         String[] rogPhoneApps = {

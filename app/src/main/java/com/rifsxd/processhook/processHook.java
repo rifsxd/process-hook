@@ -93,6 +93,27 @@ public class processHook implements IXposedHookLoadPackage {
      * @param key   The property name to be set (e.g., MANUFACTURER, BRAND).
      * @param value The new value for the property.
      */
+        public static void hookIMEI(final XC_LoadPackage.LoadPackageParam lpparam) {
+        try {
+            Class<?> telephony = XposedHelpers.findClass("android.telephony.TelephonyManager", lpparam.classLoader);
+            final String fakeImei = "867530912345678";
+
+            XC_MethodHook hook = new XC_MethodHook() {
+                protected void afterHookedMethod(MethodHookParam param) {
+                    param.setResult(fakeImei);
+                }
+            };
+
+            XposedBridge.hookAllMethods(telephony, "getDeviceId", hook);
+            XposedBridge.hookAllMethods(telephony, "getImei", hook);
+
+        } catch (Throwable t) {
+            XposedBridge.log("IMEI Hook fail: " + t.getMessage());
+        }
+    }
+
+
+        
     private void setPropValue(String key, Object value) {
         if (value != null) {
             try {

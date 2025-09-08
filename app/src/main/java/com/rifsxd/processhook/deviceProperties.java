@@ -200,7 +200,7 @@ public final class deviceProperties {
         addToDeviceMap(rogPhoneApps, ROG_PHONE_8);
 
         // Populate device map for ROG Phone 9 pro apps
-        String[] rogPhoneApps = {
+        String[] rogPhone9Apps = {
             "com.mobile.legends",
             "com.cygames.umamusume"
         };

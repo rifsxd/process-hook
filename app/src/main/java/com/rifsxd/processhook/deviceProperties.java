@@ -49,6 +49,22 @@ public final class deviceProperties {
         null                // Fingerprint (optional)
     );
 
+    // ROG Phone 9 Pro Profile
+    public static final deviceInfo ROG_PHONE_9_PRO = new deviceInfo(
+        "asus",             // Manufacturer
+        "asus",             // Brand
+        "WW_AI2501",        // Product
+        "AI2501",           // Device
+        "ASUS_AI2501",      // Model
+        "qcom",             // Hardware
+        "sun",              // Board (optional, null if not available)
+        null,               // Bootloader (optional)
+        "165",              // Refresh rate (Hz)
+        "android",          // Username (optional)
+        "mcrd1-30",         // Hostname (optional)
+        "asus/WWAI2501/ASUSAI2501:15/AQ3A.240829.003/35.1810.1810.411-0:user/release-keys"                // Fingerprint (optional)
+    );
+
     // Samsung Galaxy S24 Ultra Profile
     public static final deviceInfo SAMSUNG_S24_ULTRA = new deviceInfo(
         "samsung",          // Manufacturer
@@ -166,7 +182,8 @@ public final class deviceProperties {
 
         // Debug device mapping
         DEVICE_MAP.put("com.ytheekshana.deviceinfo", DEBUG_1);
-        DEVICE_MAP.put("ru.andr7e.deviceinfohw", ROG_PHONE_8);
+        DEVICE_MAP.put("ru.andr7e.deviceinfohw", ROG_PHONE_9_PRO);
+        DEVICE_MAP.put("com.mobile.legends", ROG_PHONE_9_PRO);
         DEVICE_MAP.put("com.finalwire.aida64", SAMSUNG_S24_ULTRA);
 
         // Populate device map for ROG Phone 8 apps
@@ -181,6 +198,13 @@ public final class deviceProperties {
             "com.madfingergames.legends"
         };
         addToDeviceMap(rogPhoneApps, ROG_PHONE_8);
+
+        // Populate device map for ROG Phone 9 pro apps
+        String[] rogPhone9Apps = {
+            "com.mobile.legends",
+            "com.cygames.umamusume"
+        };
+        addToDeviceMap(rogPhoneApps, ROG_PHONE_9_PRO);
 
         // Populate device map for Samsung Galaxy S24 Ultra apps
         String[] samsungApps = {
